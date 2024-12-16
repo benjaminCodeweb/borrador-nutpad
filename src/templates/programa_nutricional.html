@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Nutricional</title>
+</head>
+<body>
+    <h1>Hola, {{ username }}!</h1>
+    <h2>Tu plan nutricional semanal:</h2>
+    <h4>objetivo: {{objetivo}}</h4>
+    {% if error %}
+        <p>narnia</p>
+    {% else %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Desayuno</th>
+                    <th>Almuerzo</th>
+                    <th>Cena</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                <tr>
+                    <td>{{weakly_plan}}</td>
+                   
+                </tr>
+                
+            </tbody>
+        </table>
+    {% endif %}
+    <a href="/">Volver al formulario</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a la Aplicación de Nutrición</h1>
+        <p>Por favor, elige una opción:</p>
+        <div class="button-group">
+            <a href="/users/register" class="button">Registrarse</a>
+            <a href="/users/login" class="button">Iniciar Sesión</a>
+        </div>
+    </div>
+</body>
+</html>
+

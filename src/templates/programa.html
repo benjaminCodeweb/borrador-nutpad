@@ -1,0 +1,110 @@
+<!-- programa.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Nutrición</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='programa.css') }}">
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <h1>Cuestionario de Nutrición</h1>
+    <form action="/programa" method="POST">
+        <h2>Información básica</h2>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required>
+        <br>
+        <label for="altura">Altura (en cm):</label>
+        <input type="number" id="altura" name="altura" required>
+        <br>
+        <label for="peso">Peso (en kg):</label>
+        <input type="number" id="peso" name="peso" required>
+        <br>
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+        </select>
+        <br>
+
+        <h2>Metabolismo y composición corporal</h2>
+        <label for="actividad">Actividad física:</label>
+        <select id="actividad" name="actividad" required>
+            <option value="sedentario">Sedentario</option>
+            <option value="ligero">Ligero</option>
+            <option value="moderado">Moderado</option>
+            <option value="intenso">Intenso</option>
+        </select>
+        <br>
+        <label for="objetivo">Objetivo:</label>
+        <select id="objetivo" name="objetivo" required>
+            <option value="perder_peso">Perder peso</option>
+            <option value="ganar_musculo">Ganar músculo</option>
+            <option value="mantener_peso">Mantener tu peso actual</option>
+            <option value="mejorar_salud">Mejorar tu salud general</option>
+        </select>
+        <br>
+        <h2>Metabolismo y composición corporal</h2>
+<label>Condiciones médicas:
+    <select name="condiciones_medicas" required>
+        <option value="ninguna">Ninguna</option>
+        <option value="diabetes">Diabetes</option>
+        <option value="hipertensión">Hipertensión</option>
+        <option value="problemas_tiroideos">Problemas tiroideos</option>
+        <option value="otra">Otra</option>
+    </select>
+</label><br>
+ 
+<label>Alergias o intolerancias:
+    <select name="alergias">
+        <option value="ninguna">Ninguna</option>
+        <option value="gluten">Gluten</option>
+        <option value="lactosa">Lactosa</option>
+        <option value="frutos_secos">Frutos secos</option>
+        <option value="otra">Otra</option>
+    </select>
+</label><br>
+
+        <h2>Hábitos alimenticios</h2>
+        <label for="preferencias">Preferencias:</label>
+        <input type="text" id="preferencias" name="preferencias">
+        <br>
+        <label>Horario de comidas:
+            <select name="horario_comidas" required>
+                <option value="desayuno_almuerzo_cena">Desayuno, almuerzo y cena</option>
+                <option value="desayuno_almuerzo">Desayuno y almuerzo</option>
+                <option value="almuerzo_cena">Almuerzo y cena</option>
+                <option value="otra">Otra</option>
+            </select>
+        </label><br>
+        <label for="hidratacion">Hidratación (en litros/día):</label>
+        <input type="number" id="hidratacion" name="hidratacion">
+        <br>
+        <label for="consumo_alimentos">Consumo de alimentos específicos:</label>
+        <input type="text" id="consumo_alimentos" name="consumo_alimentos">
+        <br>
+
+        <h2>Datos adicionales</h2>
+        <label for="historial_peso">Historial de peso:</label>
+        <input type="text" id="historial_peso" name="historial_peso">
+        <br>
+        <label for="estres_sueño">Estrés y sueño:</label>
+        <input type="text" id="estres_sueño" name="estres_sueño">
+        <br>
+        <label for="restricciones_culturales">Restricciones culturales o éticas:</label>
+        <input type="text" id="restricciones_culturales" name="restricciones_culturales">
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
